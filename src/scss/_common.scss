@@ -1,0 +1,131 @@
+@import "_variables";
+@import "_mixins";
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+label {
+  display: block;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  color: $colorBlack;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 31.2px;
+  font-weight: 400;
+  color: $colorBlack;
+}
+
+
+.title-reset {
+  margin: 0;
+}
+
+.descr-reset {
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.btn-reset {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
