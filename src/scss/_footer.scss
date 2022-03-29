@@ -1,0 +1,117 @@
+@import "_variables";
+@import "_mixins";
+
+footer {
+  background-color: $colorGreyMD;
+}
+
+.footer {
+  &-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__nav {
+    display: flex;
+  }
+  &__list:not(:last-child) {
+    margin-right: 112px;
+  }
+  &__list-link {
+    font-size: 14px;
+    line-height: 14px;
+    color: $colorGrey;
+    transition: all .3s ease-in-out;
+  }
+  &__list-link--title {
+    line-height: 16px;
+    color: $colorBlack;
+  }
+  &__span {
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19px;
+    color: $colorGrey;
+    background-color: $colorGreyLight;
+  }
+
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__svg-img {
+    color: $colorSecondary;
+    width: 37px;
+    height: 27px;
+  }
+  &__svg-text {
+    color: $colorPrimary;
+    width: 140px;
+    height: 17px;
+  }
+}
+
+.social {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 131px;
+    margin: 0 auto;
+  }
+  &__list-link {
+    display: flex;
+  }
+  &__list-svg {
+    width: 33px;
+    height: 33px;
+    padding: 3px;
+  }
+  &__list-link svg {
+    color: $colorGrey;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+//hover
+@media (min-width: 1024px) {
+  .social {
+    &__list-link:hover svg {
+      color: $colorPrimary;
+    }
+  }
+  .footer {
+    &__list-link:hover {
+      color: $colorPrimary;
+    }
+  }
+}
+
+//active, focus
+.social {
+  &__list-link:active svg {
+    color: $colorWhite;
+    background-color: $colorPrimaryLight;
+  }
+  &__list-link:focus-visible svg {
+    color: $colorPrimaryShade;
+  }
+  &__list-link:focus-visible {
+    outline: none;
+  }
+}
+.footer {
+  &__list-link:active {
+    color: $colorPrimaryShade;
+  }
+  &__list-link:focus-visible {
+    color: $colorPrimary;
+    background-color: $colorPinkViolet;
+    outline: none;
+  }
+
+}
