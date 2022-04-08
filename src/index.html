@@ -6,101 +6,12 @@
     <main>
       <!-- intro -->
       <section class="intro">
-        <div class="container">
-          <div class="intro">
-            <div class="intro-first">
-              <div class="logo">
-                <div class="logo__img">
-                  <svg class="logo__svg-img">
-                    <use xlink:href="img/icons/icons.svg#logo-img"></use>
-                  </svg>
-                  <svg class="logo__svg-text">
-                    <use xlink:href="img/icons/icons.svg#logo-text"></use>
-                  </svg>
-                </div>
-              </div>
-
-              <ul class="intro-first__list">
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Каталог</a>
-                </li>
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Магазины</a>
-                </li>
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Шоу-рум</a>
-                </li>
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Доставка и оплата</a>
-                </li>
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Дисконт</a>
-                </li>
-                <li class="intro-first__list-item">
-                  <a href="#" class="intro-first__list-link">Контакты</a>
-                </li>
-              </ul>
-            </div>
-            <div class="intro-second">
-              <div class="intro-second__left">
-                <form
-                  class="intro-second__form"
-                  action="https://jsonplaceholder.typicode.com/posts"
-                  autocomplete="on"
-                  method="post"
-                >
-                  <button class="intro-second__search-btn btn-reset">
-                    <svg class="intro-second__search-icon">
-                      <use xlink:href="img/icons/icons.svg#search-input"></use>
-                    </svg>
-                  </button>
-                  <input type="search" class="intro-second__search" placeholder="Я хочу купить ..." />
-                  <button class="intro-second__arrow-btn btn-reset">
-                    <svg class="intro-second__arrow-input">
-                      <use xlink:href="img/icons/icons.svg#arrow-input"></use>
-                    </svg>
-                  </button>
-                </form>
-                <div class="intro-second__custom-select">
-                  <div class="intro-second-select select">
-                    <button class="intro-second-select__header select__header btn-reset">
-                      <span class="intro-second-select__current select__current">Категория</span>
-                      <svg class="intro-second-select__icon-svg">
-                        <use xlink:href="img/icons/icons.svg#headerSelect"></use>
-                      </svg>
-                    </button>
-                    <div class="intro-second-select__body">
-                      <div class="intro-second-select__item select__item">Диваны</div>
-                      <div class="intro-second-select__item select__item">Кресла</div>
-                      <div class="intro-second-select__item select__item">Пуфы</div>
-                      <div class="intro-second-select__item select__item">Кровати</div>
-                      <div class="intro-second-select__item select__item">Тумбы</div>
-                      <div class="intro-second-select__item select__item">Комоды</div>
-                      <div class="intro-second-select__item select__item">Стулья</div>
-                      <div class="intro-second-select__item select__item">Столы</div>
-                      <div class="intro-second-select__item select__item">Аксессуары</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="intro-second__right">
-                <button class="intro-second__btn btn-reset" type="button">
-                  <svg class="intro-second__btn-user">
-                    <use xlink:href="img/icons/icons.svg#user"></use>
-                  </svg>
-                </button>
-                <button class="intro-second__btn btn-reset" type="button">
-                  <svg class="intro-second__btn-shopping-cart">
-                    <use xlink:href="img/icons/icons.svg#shopping_cart"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="container"></div>
       </section>
     </main>
     @@include('html/footer.html',{ })
+    <!-- greenSock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="js/app.min.js"></script>
   </body>
 </html>
