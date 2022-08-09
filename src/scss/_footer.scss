@@ -16,7 +16,10 @@ footer {
     display: flex;
   }
   &__list:not(:last-child) {
-    margin-right: 112px;
+    margin-right: 142px;
+  }
+  &__list-item {
+    margin-bottom: 4px;
   }
   &__list-link {
     font-size: 14px;
@@ -42,8 +45,15 @@ footer {
 .logo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  &__img {
+    display: flex;
+    align-items: center;
+  }
+  &__img-footer {
+    margin-bottom: 25px;
+  }
   &__svg-img {
+    margin-right: 10px;
     color: $colorSecondary;
     width: 37px;
     height: 27px;
@@ -59,9 +69,8 @@ footer {
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
     max-width: 131px;
-    margin: 0 auto;
   }
   &__list-link {
     display: flex;
@@ -94,11 +103,11 @@ footer {
 //active, focus
 .social {
   &__list-link:active svg {
-    color: $colorWhite;
-    background-color: $colorPrimaryLight;
+    color: $colorPrimaryShade;
   }
   &__list-link:focus-visible svg {
-    color: $colorPrimaryShade;
+    color: $colorWhite;
+    background-color: $colorPrimaryLight;
   }
   &__list-link:focus-visible {
     outline: none;
@@ -145,9 +154,16 @@ footer {
       justify-content: space-between;
       flex-wrap: wrap;
     }
+    &__list:not(:last-child) {
+      margin-right: 0;
+    }
   }
   .logo {
     flex-direction: row;
+    margin-right: 0;
+    &__img-footer {
+      margin-bottom: 0;
+    }
   }
 
 }
@@ -174,7 +190,12 @@ footer {
     margin-right: 0;
     &__img {
       text-align: center;
-      padding-bottom: 20px;
+      padding-bottom: 28px;
+    }
+  }
+  .social {
+    &__list {
+      margin: 0 auto;
     }
   }
 

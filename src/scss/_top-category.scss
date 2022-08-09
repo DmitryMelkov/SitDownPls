@@ -1,0 +1,242 @@
+@import "_variables";
+@import "_mixins";
+
+.top-category {
+  &__top-container {
+    margin-bottom: 70px;
+  }
+  &__grid-container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+
+    background-color: $colorGreyLight;
+    border-radius: 10px;
+  }
+  &__item-up {
+    grid-column: span 6;
+    min-height: 511px;
+  }
+  &__item-down {
+    max-height: 405px;
+    grid-column: span 4;
+  }
+  &__span-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  &__span {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 14px;
+    color: $colorGrey;
+  }
+  &__span:not(:last-child) {
+    margin-right: 30px;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__img {
+    max-width: 515px;
+    margin-left: -28px;
+  }
+  &__img-small {
+    max-width: 300px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $colorPrimary;
+    font-weight: 700;
+  }
+  &__button-svg {
+    margin-left: 5px;
+    width: 22px;
+    height: 22px;
+    color: $colorPrimary;
+  }
+  &__button-prev {
+    width: 32px;
+    right: 10px;
+  }
+  &__button-next {
+    width: 32px;
+    left: 50px;
+  }
+  &__slide {
+    max-height: 676px;
+  }
+  &__slide-desc {
+    background-color: $colorGreyLight;
+    border-radius: 10px;
+  }
+  &__slide-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+  }
+  &__slide-p {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 33px;
+
+  }
+  &__slide-btn {
+    @include btn-white;
+    line-height: 16px;
+  }
+  &__useful-nav {
+    top: 31%;
+    right: 85px;
+    left: auto;
+  }
+
+}
+
+//hover
+@media (min-width: 1024px) {
+  .top-category  {
+    &__slide-btn:hover {
+      background-color: $colorPrimary;
+      border: 2px solid $colorPrimary;
+      color: $colorWhite;
+    }
+  }
+}
+
+//active, focus
+.top-category {
+  &__slide-btn:focus {
+    background-color: $colorPrimaryLight;
+    border: 2px solid $colorPrimary;
+    color: $colorWhite;
+  }
+  &__slide-btn:active {
+    background-color: $colorPrimaryShade;
+    border: 2px solid $colorPrimaryShade;
+    color: $colorWhite;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .top-category  {
+    &__grid-container {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    &__item-up {
+      grid-column: span 3;
+    }
+    &__item-down {
+      grid-column: span 3;
+      max-height: 511px;
+    }
+    &__item-up-big {
+      grid-column: span 6;
+    }
+    &__item-up-small {
+      order: 5;
+    }
+    &__slide-p {
+      font-size: 16px;
+      line-height: 21.79px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .top-category  {
+    &__grid-container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &__item {
+      min-height: 511px;
+    }
+    &__item-up {
+      grid-column: span 3;
+    }
+    &__item-down {
+      grid-column: span 3;
+    }
+    &__item-up-big {
+      grid-column: span 6;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .top-category  {
+    &__span-container-small {
+      flex-direction: column;
+    }
+    &__span-container-small span:first-child {
+      margin-bottom: 5px;
+    }
+    &__swiper-wrapper {
+      padding-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .top-category  {
+    &__top-container {
+      margin-bottom: 78px;
+    }
+    &__grid-container {
+      gap: 32px 16px;
+    }
+    &__item {
+      padding: 16px;
+      min-height: 331px;
+    }
+    &__item-down,
+    &__item-up-small {
+      min-height: 206px;
+    }
+    &__span-container {
+      margin-bottom: 0;
+    }
+    &__span-container-small span {
+      font-size: 10px;
+      line-height: 10px;
+    }
+    &__title {
+      margin-bottom: 0;
+    }
+    &__title-small {
+      font-size: 16px;
+      line-height: 16px;
+    }
+    &__link {
+      font-size: 12px;
+    }
+    &__img {
+      margin-left: -15px;
+    }
+
+    &__swiper-wrapper {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .top-category  {
+    &__useful-nav {
+      top: 538px;
+      right: auto;
+      left: 35%;
+    }
+  }
+}
