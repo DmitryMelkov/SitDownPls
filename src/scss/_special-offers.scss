@@ -2,10 +2,6 @@
 @import "_mixins";
 
 .special-offers {
-  &__button {
-    display: flex;
-    position: relative;
-  }
   &__swiper-wrapper {
     display: flex;
   }
@@ -46,26 +42,6 @@
   &__slide-big {
     padding-top: 37px;
 
-  }
-  &__button-nav {
-    display: block;
-    position: absolute;
-    top: 27.5%;
-    right: 85px;
-  }
-  &__button-prev {
-    width: 32px;
-    right: 10px;
-  }
-  &__button-next {
-    width: 32px;
-    left: 50px;
-  }
-  &__button-prev-svg,
-  &__button-next-svg {
-    width: 32px;
-    height: 32px;
-    color: $colorPrimary;
   }
   &__img {
     display: block;
@@ -116,6 +92,9 @@
     grid-column: span 3;
     min-height: 420px;
   }
+  &__rating-item:nth-child(n + 9) {
+    display: none;
+  }
   &__rating-goods {
     position: absolute;
     top: 30px;
@@ -148,43 +127,88 @@
   }
 }
 
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-  opacity: 1;
+.slider {
+  &__button {
+    display: flex;
+    position: relative;
+  }
+  &__button-nav {
+    display: block;
+    position: absolute;
+    top: 27.5%;
+    right: 85px;
+  }
+  &__button-next, &__button-prev {
+    width: 32px;
+  }
+  &__button-prev {
+    right: 10px;
+  }
+  &__button-next {
+    left: 50px;
+  }
+  &__button-prev-svg,
+  &__button-next-svg {
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    border: 3px solid $colorPrimary;
+    border-radius: 50%;
+    color: $colorPrimary;
+    background-color: $colorWhite;
+    transition-property: color, background-color, border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
 }
 
-.swiper-button-prev.swiper-button-disabled .special-offers__button-prev-svg,
-.swiper-button-next.swiper-button-disabled .special-offers__button-next-svg {
-  color: $colorGrey;
-}
 
 //hover
 @media (min-width: 1024px) {
   .special-offers {
-    &__btn-click:hover {
+    &__btn-click:hover:not(:focus-visible) {
       background-color: $colorPrimary;
       border: 2px solid $colorPrimary;
       color: $colorWhite;
     }
-    &__button-next-svg:hover {
-      color: red;
+
+  }
+  .slider {
+    &__button-next-svg:hover:not(:focus-visible),
+    &__button-prev-svg:hover:not(:focus-visible) {
+      color: $colorWhite;
+      background-color: $colorPrimary;
     }
   }
 }
 
 //active, focus
 .special-offers {
-  &__btn-click:focus {
-    background-color: $colorPrimaryLight;
-    border: 2px solid $colorPrimary;
-    color: $colorWhite;
-  }
-  &__btn-click:active {
+  &__btn-click:active:not(:focus-visible) {
     background-color: $colorPrimaryShade;
     border: 2px solid $colorPrimaryShade;
     color: $colorWhite;
   }
+  &__btn-click:focus-visible {
+    background-color: $colorPrimaryLight;
+    border: 2px solid $colorPrimary;
+    color: $colorWhite;
+  }
 
+}
+
+.slider {
+  &__button-next:active:not(:focus-visible) &__button-next-svg,
+  &__button-prev:active:not(:focus-visible) &__button-prev-svg {
+    color: $colorWhite;
+    background-color: $colorPrimaryShade;
+    border-color: $colorPrimaryShade;
+  }
+  &__button-next:focus-visible &__button-next-svg,
+  &__button-prev:focus-visible &__button-prev-svg {
+    color: $colorWhite;
+    background-color: $colorPrimaryLight;
+  }
 }
 
 @media (min-width: 1330px) {
@@ -213,14 +237,12 @@
   .special-offers {
     &__rating-container {
       grid-template-columns: repeat(9, 1fr);
-      max-height: 880px;
       overflow: hidden;
       transition: all .3s ease-in-out;
     }
-    &__rating-container-open {
-      max-height: 1338px;
+    &__rating-item:nth-child(n + 7) {
+      display: none;
     }
-
   }
 }
 
@@ -228,15 +250,24 @@
   .special-offers {
     &__rating-container {
       grid-template-columns: repeat(6, 1fr);
-      max-height: 1330px;
     }
-    &__rating-container-open {
-      max-height: 1800px;
+  }
+}
+
+@media (max-width: 700px) {
+  .slider {
+    &__header {
+      font-size: 24px;
     }
   }
 }
 
 @media (max-width: 639px) {
+  .slider {
+    &__header {
+      font-size: 24px;
+    }
+  }
   .special-offers {
     &__rating-container {
       gap: 16px;
@@ -247,10 +278,6 @@
 
     &__slide {
       min-height: 508px;
-    }
-
-    &__header {
-      font-size: 24px;
     }
     &__rating-item {
       min-height: 278px;
@@ -269,8 +296,10 @@
       font-size: 16px;
       line-height: 20px;
     }
+  }
+  .slider {
     &__button-nav {
-      top: 616px;
+      top: 594px;
       left: 36%;
     }
   }
@@ -286,12 +315,17 @@
     }
     &__rating-container {
       grid-template-columns: repeat(6, 1fr);
-      max-height: 873px;
-    }
-    &__rating-container-open {
-      max-height: 1300px;
     }
   }
+}
+
+@media (max-width: 352px) {
+  .slider {
+    &__button-nav {
+      top: 616px;
+    }
+  }
+
 }
 
 @media (max-width: 320px) {

@@ -210,6 +210,7 @@
     width: 50%;
     line-height: 19px;
     padding: 10px 30px;
+    color: $colorBlack;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
@@ -244,6 +245,7 @@
     transition: all .3s ease-in-out;
   }
   &__current {
+    font-size: 16px;
     line-height: 19px;
     margin-right: 5px;
     color: $colorPrimary;
@@ -265,14 +267,11 @@
     z-index: 1;
   }
   &__item {
+    width: 100%;
+    font-size: 16px;
     line-height: 19px;
     padding: 8px;
     cursor: pointer;
-  }
-  &__item:hover {
-    background-color: $colorPrimary;
-    color: $colorWhite;
-    transition: all .3s ease-in-out;
   }
 }
 
@@ -281,10 +280,10 @@
 //hover
 @media (min-width: 1024px) {
   .header {
-    &__nav-link:hover {
+    &__nav-link:hover:not(:focus-visible) {
       color: $colorPrimary;
     }
-    &__number:hover {
+    &__number:hover:not(:focus-visible) {
       color: $colorSecondaryLight;
     }
     &__number:hover &__number-phone {
@@ -293,11 +292,14 @@
     &__two-list-link:hover {
       color: $colorPrimary;
     }
-    &__three-btn:hover &__three-btn-user,
-    &__three-btn:hover &__three-btn-shopping-cart {
+    &__three-form &__three-search:hover {
+      background-color: $colorGreyMD;
+    }
+    &__three-btn:hover:not(:focus-visible) &__three-btn-user,
+    &__three-btn:hover:not(:focus-visible) &__three-btn-shopping-cart {
       color: $colorPrimaryLight;
     }
-    &__select-btn:hover {
+    &__select-btn:hover:not(:focus-visible) {
       border: 2px solid $colorPrimary;
     }
     &__three-arrow-btn:hover {
@@ -312,23 +314,29 @@
     &__header:hover &__icon-svg {
       color: $colorPrimaryLight;
     }
+    &__item:hover {
+      background-color: $colorPrimary;
+      color: $colorWhite;
+      transition: all .3s ease-in-out;
+    }
+
   }
 }
 
 //active, focus
 .header {
-  &__nav-link:active {
+  &__nav-link:active:not(:focus-visible) {
     color: $colorPrimaryShade;
   }
   &__nav-link:focus-visible {
-    color: $colorPrimary;
+    color: $colorPrimaryLight;
     background-color: $colorPinkViolet;
     outline: none;
   }
-  &__number:active {
+  &__number:active:not(:focus-visible) {
     color: $colorSecondaryShade;
   }
-  &__number:active &__number-phone {
+  &__number:active:not(:focus-visible) &__number-phone {
     color: $colorSecondaryShade;
   }
   &__number:focus-visible {
@@ -342,13 +350,13 @@
   &__two-list-link:active {
     color: $colorPrimaryShade;
   }
-  &__two-list-link:focus-visible {
+  &__two-list-link:focus {
     color: $colorPrimary;
     background-color: $colorPinkViolet;
     outline: none;
   }
-  &__three-btn:active &__three-btn-user,
-  &__three-btn:active &__three-btn-shopping-cart {
+  &__three-btn:active:not(:focus-visible) &__three-btn-user,
+  &__three-btn:active:not(:focus-visible) &__three-btn-shopping-cart {
     color: $colorPrimaryShade;
   }
   &__three-btn:focus-visible &__three-btn-user,
@@ -368,7 +376,7 @@
     background-color: $colorGreyLight;
     border: 2px solid transparent;
   }
-  &__select-btn:active {
+  &__select-btn:active:not(:focus-visible) {
     border: 2px solid $colorPrimaryShade;
   }
   &__select-btn:focus-visible {
@@ -376,13 +384,18 @@
     background-color: $colorPinkViolet;
     outline: none;
   }
+  &__select-item:focus {
+    background-color: $colorPrimary;
+    color: $colorWhite;
+    transition: all .3s ease-in-out;
+  }
   &__three-arrow-btn:active {
     transform: translateX(5px);
   }
   &__three-arrow-btn:active  &__three-arrow-input {
     color: $colorPrimaryShade;
   }
-  &__three-arrow-btn:focus-visible  &__three-arrow-input {
+  &__three-arrow-btn:focus  &__three-arrow-input {
     color: $colorPrimaryShade;
   }
 }
@@ -399,6 +412,11 @@
   &__header:focus-visible {
     background-color: $colorPinkViolet;
     outline: none;
+  }
+  &__item:focus-visible {
+    background-color: $colorPrimary;
+    color: $colorWhite;
+    transition: all .3s ease-in-out;
   }
 }
 

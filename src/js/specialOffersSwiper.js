@@ -2,7 +2,7 @@ import Swiper, { Navigation, Pagination } from "swiper";
 
 export function specialOffersSwiper() {
   // init Swiper:
-  const specialOffersSwiper = new Swiper(".special-offers__swiper", {
+  const specialOffersSwiper = new Swiper(".special-offers__slider", {
     modules: [Navigation, Pagination],
     navigation: {
       nextEl: ".special-offers__button-next",

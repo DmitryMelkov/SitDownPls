@@ -17,7 +17,7 @@ export function burger() {
       {
         display: "flex",
         opacity: 1,
-        duration: 0.5,
+        duration: 0.1,
       }
     )
     .from(".header__two-list-js", {

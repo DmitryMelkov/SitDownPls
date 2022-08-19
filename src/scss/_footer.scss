@@ -89,12 +89,12 @@ footer {
 //hover
 @media (min-width: 1024px) {
   .social {
-    &__list-link:hover svg {
+    &__list-link:hover:not(:focus-visible) svg {
       color: $colorPrimary;
     }
   }
   .footer {
-    &__list-link:hover {
+    &__list-link:hover:not(:focus-visible) {
       color: $colorPrimary;
     }
   }
@@ -102,7 +102,7 @@ footer {
 
 //active, focus
 .social {
-  &__list-link:active svg {
+  &__list-link:active:not(:focus-visible) svg {
     color: $colorPrimaryShade;
   }
   &__list-link:focus-visible svg {
@@ -114,7 +114,7 @@ footer {
   }
 }
 .footer {
-  &__list-link:active {
+  &__list-link:active:not(:focus-visible) {
     color: $colorPrimaryShade;
   }
   &__list-link:focus-visible {
