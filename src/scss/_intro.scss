@@ -4,7 +4,7 @@
 
 
 .intro {
-  margin-top: 32px;
+  padding-top: 32px;
   &__swiper {
     width: 100%;
     height: 100%;
@@ -12,6 +12,7 @@
   &__img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -29,6 +30,7 @@
   }
   &__slide {
     min-height: 400px;
+    height: auto;
   }
   &__container {
     margin-top: 86px;
@@ -49,6 +51,7 @@
     max-width: 504px;
     font-size: 50px;
     line-height: 65px;
+    font-weight: 700;
     color: $colorGrey;
   }
   &__content-title-slide-3 {

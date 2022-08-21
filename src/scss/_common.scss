@@ -58,21 +58,20 @@ input::placeholder {
   color: $colorGrey;
 }
 
-h2 {
-  font-size: 48px;
-  font-weight: 700;
-}
+// h2 {
+//   font-size: 48px;
+//   font-weight: 700;
+// }
 
-h3 {
-  margin-top: 0;
-  margin-bottom: 26px;
+h2 {
+  padding-bottom: 26px;
   font-size: 32px;
   line-height: 32px;
   font-weight: 400;
   color: $colorBlack;
 }
 
-h4 {
+h3 {
   font-size: 24px;
   line-height: 31.2px;
   font-weight: 400;
@@ -133,7 +132,7 @@ span, p {
   margin: 0 auto;
 }
 .section {
-  margin-top: 70px;
+  padding-top: 70px;
 }
 
 

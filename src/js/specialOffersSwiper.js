@@ -4,6 +4,7 @@ export function specialOffersSwiper() {
   // init Swiper:
   const specialOffersSwiper = new Swiper(".special-offers__slider", {
     modules: [Navigation, Pagination],
+    slidesPerView: "auto",
     navigation: {
       nextEl: ".special-offers__button-next",
       prevEl: ".special-offers__button-prev",

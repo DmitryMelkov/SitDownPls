@@ -13,10 +13,9 @@ footer {
     justify-content: space-between;
   }
   &__nav {
-    display: flex;
-  }
-  &__list:not(:last-child) {
-    margin-right: 142px;
+    display: grid;
+    gap: 112px;
+    grid-template-columns: repeat(4, 1fr);
   }
   &__list-item {
     margin-bottom: 4px;
@@ -45,6 +44,7 @@ footer {
 .logo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   &__img {
     display: flex;
     align-items: center;
@@ -125,75 +125,52 @@ footer {
 
 }
 
-@media (max-width: 1260px) {
+
+@media (max-width: 1200px) {
   .footer {
-    &__list:not(:last-child) {
-      margin-right: 85px;
+    &__nav {
+      gap: 75px;
     }
   }
-
 }
 
-
-@media (max-width: 1024px) {
+@media (max-width: 1020px) {
   .footer {
-    &__list:not(:last-child) {
-      margin-right: 75px;
+    &__nav {
+      gap: 32px;
     }
   }
-
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer {
     &-container {
       flex-direction: column;
     }
-    &__nav {
-      margin-top: 25px;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    &__list:not(:last-child) {
-      margin-right: 0;
-    }
   }
   .logo {
     flex-direction: row;
-    margin-right: 0;
-    &__img-footer {
-      margin-bottom: 0;
-    }
+    justify-content: space-between;
   }
 
 }
-@media (max-width: 704px) {
+@media (max-width: 700px) {
   .footer {
-    &__list:not(:last-child) {
-      margin-right: 10px;
+    &__nav {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
 
 @media (max-width: 500px) {
-  .footer {
-    &__list {
-      width: 50%;
-      margin-bottom: 24px;
-    }
-    &__list:not(:last-child) {
-      margin-right: 0;
-    }
-  }
   .logo {
     flex-direction: column;
-    margin-right: 0;
     &__img {
-      text-align: center;
-      padding-bottom: 28px;
+      justify-content: center;
     }
   }
   .social {
+    margin-bottom: 24px;
     &__list {
       margin: 0 auto;
     }

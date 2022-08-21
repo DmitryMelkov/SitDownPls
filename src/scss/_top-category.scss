@@ -3,7 +3,7 @@
 
 .top-category {
   &__top-container {
-    margin-bottom: 70px;
+    padding-bottom: 70px;
   }
   &__grid-container {
     display: grid;
@@ -24,7 +24,7 @@
     min-height: 511px;
   }
   &__item-down {
-    max-height: 405px;
+    min-height: 405px;
     grid-column: span 4;
   }
   &__span-container {
@@ -101,7 +101,7 @@
     left: 50px;
   }
   &__slide {
-    max-height: 676px;
+    height: 100%;
   }
   &__slide-desc {
     background-color: $colorGreyLight;
@@ -112,6 +112,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     min-height: 250px;
   }
   &__slide-p {
@@ -252,7 +253,7 @@
 @media (max-width: 450px) {
   .top-category  {
     &__top-container {
-      margin-bottom: 78px;
+      padding-bottom: 78px;
     }
     &__grid-container {
       gap: 32px 16px;

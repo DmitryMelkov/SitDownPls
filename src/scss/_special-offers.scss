@@ -28,6 +28,7 @@
     position: relative;
     padding: 30px;
     min-height: 511px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -86,7 +87,7 @@
     grid-template-columns: repeat(12, 1fr);
   }
   &__header-raiting {
-    margin-top: 70px;
+    padding-top: 70px;
   }
   &__rating-item {
     grid-column: span 3;
