@@ -2,9 +2,10 @@
 @import "_mixins";
 
 .contacts {
-  margin-bottom: 70px;
+  margin-bottom: 67px;
   &__header {
     margin-bottom: 10px;
+    padding-bottom: 0;
   }
   &__content {
     display: flex;
@@ -117,7 +118,7 @@
 
 //active, focus
 .contacts  {
-  &__input:focus {
+  &__input:focus:not(:active) {
     background-color: $colorPinkLight;
     border: 1px solid $colorPrimary;
     outline: none;
@@ -126,6 +127,7 @@
 
 @media (max-width: 1024px) {
   .contacts  {
+    padding-top: 73px;
     &__left {
       width: 40%;
     }

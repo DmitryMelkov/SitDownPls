@@ -58,11 +58,6 @@ input::placeholder {
   color: $colorGrey;
 }
 
-// h2 {
-//   font-size: 48px;
-//   font-weight: 700;
-// }
-
 h2 {
   padding-bottom: 26px;
   font-size: 32px;
@@ -135,6 +130,14 @@ span, p {
   padding-top: 70px;
 }
 
+.logo {
+  &__img {
+    width: 187px;
+    height: 27px;
+  }
+}
+
+
 
 //убрать крестик у инпута
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
@@ -166,18 +169,18 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 //hover
 @media (min-width: 1024px) {
-  .content-btn:hover:not(:focus-visible) {
+  .content-btn:hover {
       background-color: $colorPrimaryLight;
       border: 2px solid $colorPrimaryLight;
   }
 }
 
 //active, focus
-.content-btn:active:not(:focus-visible) {
+.content-btn:active {
   background-color: $colorPrimaryShade;
   border: 2px solid $colorPrimaryShade;
 }
-.content-btn:focus-visible {
+.content-btn:focus-visible:not(:active) {
     background-color: $colorPrimaryLight;
     border: 2px solid $colorPrimaryShade;
     outline: none;
@@ -204,6 +207,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
 }
 
+
 @media (max-width: 768px) {
   .container {
     padding-left: 72px;
@@ -229,7 +233,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     padding-left: 12px;
     padding-right: 12px;
   }
-  h3 {
+  h2 {
     font-size: 24px;
     line-height: 24px;
   }

@@ -101,18 +101,23 @@
     left: 50px;
   }
   &__slide {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
   }
   &__slide-desc {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background-color: $colorGreyLight;
     border-radius: 10px;
   }
   &__slide-content {
+    flex-grow: 1;
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     min-height: 250px;
   }
   &__slide-p {
@@ -136,16 +141,16 @@
 //hover
 @media (min-width: 1024px) {
   .top-category  {
-    &__slide-btn:hover:not(:focus-visible) {
+    &__slide-btn:hover {
       background-color: $colorPrimary;
       border: 2px solid $colorPrimary;
       color: $colorWhite;
     }
-    &__link:hover:not(:focus-visible)::after {
+    &__link:hover::after {
       opacity: 1;
       background-color: $colorPrimary;
     }
-    &__link:hover:not(:focus-visible) &__button-svg {
+    &__link:hover &__button-svg {
       color: $colorWhite;
       background-color: $colorPrimary;
     }
@@ -154,7 +159,7 @@
 
 //active, focus
 .top-category {
-  &__slide-btn:focus-visible {
+  &__slide-btn:focus-visible:not(:active) {
     background-color: $colorPrimaryLight;
     border: 2px solid $colorPrimary;
     color: $colorWhite;
@@ -164,31 +169,29 @@
     border: 2px solid $colorPrimaryShade;
     color: $colorWhite;
   }
-  &__link:focus-visible {
+  &__link:focus-visible:not(:active) {
     outline: none;
   }
-  &__link:focus-visible::after {
+  &__link:focus-visible:not(:active)::after {
     opacity: 1;
     background-color: $colorPrimaryLight;
   }
-  &__link:focus-visible &__button-svg {
+  &__link:focus-visible:not(:active) &__button-svg {
     color: $colorWhite;
     background-color: $colorPrimaryLight;
   }
-  &__link:active:not(:focus-visible) {
+  &__link:active {
     color: $colorPrimaryShade;
   }
-  &__link:active:not(:focus-visible)::after {
+  &__link:active::after {
     opacity: 1;
     background-color: $colorPrimaryShade;
   }
-  &__link:active:not(:focus-visible) &__button-svg {
+  &__link:active &__button-svg {
     color: $colorWhite;
     background-color: $colorPrimaryShade;
     border-color: $colorPrimaryShade;
   }
-
-
 }
 
 @media (max-width: 1024px) {
@@ -247,6 +250,13 @@
     &__swiper-wrapper {
       padding-bottom: 100px;
     }
+    &__item {
+      padding: 16px;
+      min-height: 331px;
+    }
+    &__img {
+      margin-left: -15px;
+    }
   }
 }
 
@@ -258,10 +268,7 @@
     &__grid-container {
       gap: 32px 16px;
     }
-    &__item {
-      padding: 16px;
-      min-height: 331px;
-    }
+
     &__item-down,
     &__item-up-small {
       min-height: 206px;
@@ -283,9 +290,7 @@
     &__link {
       font-size: 12px;
     }
-    &__img {
-      margin-left: -15px;
-    }
+
 
     &__swiper-wrapper {
       padding-bottom: 50px;

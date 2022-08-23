@@ -33,8 +33,8 @@
     height: auto;
   }
   &__container {
-    margin-top: 86px;
-    margin-bottom: 77px;
+    margin-top: 82px;
+    margin-bottom: 51px;
   }
   &__content {
     width: 100%;
@@ -47,7 +47,7 @@
   }
   &__content-title {
     margin-top: 50px;
-    margin-bottom: 44px;
+    margin-bottom: 18px;
     max-width: 504px;
     font-size: 50px;
     line-height: 65px;
@@ -100,7 +100,6 @@
 
 @media (max-width: 500px) {
   .intro {
-    margin-top: 40px;
     &__container {
       padding-left: 25px;
       padding-right: 25px;
@@ -113,7 +112,7 @@
     &__content-btn-two {
       display: block;
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       padding: 22px 104px;
       width: 100%;
     }

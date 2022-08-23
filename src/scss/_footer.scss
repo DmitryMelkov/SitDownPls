@@ -17,9 +17,9 @@ footer {
     gap: 112px;
     grid-template-columns: repeat(4, 1fr);
   }
-  &__list-item {
-    margin-bottom: 4px;
-  }
+  // &__list-item {
+  //   margin-bottom: 4px;
+  // }
   &__list-link {
     font-size: 14px;
     line-height: 14px;
@@ -41,28 +41,11 @@ footer {
   }
 
 }
-.logo {
+
+.logo-footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  &__img {
-    display: flex;
-    align-items: center;
-  }
-  &__img-footer {
-    margin-bottom: 25px;
-  }
-  &__svg-img {
-    margin-right: 10px;
-    color: $colorSecondary;
-    width: 37px;
-    height: 27px;
-  }
-  &__svg-text {
-    color: $colorPrimary;
-    width: 140px;
-    height: 17px;
-  }
+  justify-content: space-between;
 }
 
 .social {
@@ -89,12 +72,12 @@ footer {
 //hover
 @media (min-width: 1024px) {
   .social {
-    &__list-link:hover:not(:focus-visible) svg {
+    &__list-link:hover svg {
       color: $colorPrimary;
     }
   }
   .footer {
-    &__list-link:hover:not(:focus-visible) {
+    &__list-link:hover {
       color: $colorPrimary;
     }
   }
@@ -102,22 +85,22 @@ footer {
 
 //active, focus
 .social {
-  &__list-link:active:not(:focus-visible) svg {
+  &__list-link:active svg {
     color: $colorPrimaryShade;
   }
-  &__list-link:focus-visible svg {
+  &__list-link:focus-visible:not(:active) svg {
     color: $colorWhite;
     background-color: $colorPrimaryLight;
   }
-  &__list-link:focus-visible {
+  &__list-link:focus-visible:not(:active) {
     outline: none;
   }
 }
 .footer {
-  &__list-link:active:not(:focus-visible) {
+  &__list-link:active {
     color: $colorPrimaryShade;
   }
-  &__list-link:focus-visible {
+  &__list-link:focus-visible:not(:active) {
     color: $colorPrimary;
     background-color: $colorPinkViolet;
     outline: none;
@@ -134,12 +117,13 @@ footer {
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .footer {
     &__nav {
       gap: 32px;
     }
   }
+
 }
 
 @media (max-width: 900px) {
@@ -148,9 +132,9 @@ footer {
       flex-direction: column;
     }
   }
-  .logo {
+  .logo-footer {
     flex-direction: row;
-    justify-content: space-between;
+    margin-bottom: 25px;
   }
 
 }
@@ -163,18 +147,19 @@ footer {
 }
 
 @media (max-width: 500px) {
-  .logo {
-    flex-direction: column;
-    &__img {
-      justify-content: center;
-    }
-  }
   .social {
     margin-bottom: 24px;
     &__list {
       margin: 0 auto;
     }
   }
-
+  .logo-footer {
+    flex-direction: column;
+  }
+  .logo {
+    &__img {
+      margin: 0 auto 24px;
+    }
+  }
 
 }

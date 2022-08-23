@@ -27,6 +27,7 @@
   &__slide {
     position: relative;
     padding: 30px;
+
     min-height: 511px;
     height: auto;
     display: flex;
@@ -38,7 +39,6 @@
   }
   &__slide-small {
     padding-top: 72px;
-
   }
   &__slide-big {
     padding-top: 37px;
@@ -167,7 +167,7 @@
 //hover
 @media (min-width: 1024px) {
   .special-offers {
-    &__btn-click:hover:not(:focus-visible) {
+    &__btn-click:hover {
       background-color: $colorPrimary;
       border: 2px solid $colorPrimary;
       color: $colorWhite;
@@ -175,8 +175,8 @@
 
   }
   .slider {
-    &__button-next-svg:hover:not(:focus-visible),
-    &__button-prev-svg:hover:not(:focus-visible) {
+    &__button-next-svg:hover,
+    &__button-prev-svg:hover {
       color: $colorWhite;
       background-color: $colorPrimary;
     }
@@ -185,12 +185,12 @@
 
 //active, focus
 .special-offers {
-  &__btn-click:active:not(:focus-visible) {
+  &__btn-click:active {
     background-color: $colorPrimaryShade;
     border: 2px solid $colorPrimaryShade;
     color: $colorWhite;
   }
-  &__btn-click:focus-visible {
+  &__btn-click:focus-visible:not(:active) {
     background-color: $colorPrimaryLight;
     border: 2px solid $colorPrimary;
     color: $colorWhite;
@@ -199,29 +199,49 @@
 }
 
 .slider {
-  &__button-next:active:not(:focus-visible) &__button-next-svg,
-  &__button-prev:active:not(:focus-visible) &__button-prev-svg {
+  &__button-next:active &__button-next-svg,
+  &__button-prev:active &__button-prev-svg {
     color: $colorWhite;
     background-color: $colorPrimaryShade;
     border-color: $colorPrimaryShade;
   }
-  &__button-next:focus-visible &__button-next-svg,
-  &__button-prev:focus-visible &__button-prev-svg {
+  &__button-next:focus-visible:not(:active) &__button-next-svg,
+  &__button-prev:focus-visible:not(:active) &__button-prev-svg {
     color: $colorWhite;
     background-color: $colorPrimaryLight;
   }
 }
 
-@media (min-width: 1330px) {
+@media (min-width: 720px) {
   .special-offers {
-    &__slide-small {
-      width: 23% !important;
-    }
+    &__slide-small,
     &__slide-big {
-      width: 49% !important;
+      width: calc((296 + 32) / 624 * 100% - 32px);
     }
   }
 }
+
+@media (min-width: 1023px) {
+  .special-offers {
+    &__slide-small,
+    &__slide-big {
+      width: calc((296 + 32) / 951 * 100% - 32px);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .special-offers {
+    &__slide-small {
+      width: calc((296 + 32) / 1280 * 100% - 32px);
+    }
+    &__slide-big {
+      width: calc((624 + 32) / 1280 * 100% - 32px);
+    }
+  }
+}
+
+
 
 @media (max-width: 1330px) {
   .special-offers {
@@ -243,6 +263,9 @@
     }
     &__rating-item:nth-child(n + 7) {
       display: none;
+    }
+    &__btn-container {
+      margin-top: 24px;
     }
   }
 }
@@ -293,9 +316,15 @@
 
 @media (max-width: 560px) {
   .special-offers {
-    &__title {
+    &__rating-title {
       font-size: 16px;
       line-height: 20px;
+    }
+    &__slider {
+      padding-bottom: 50px;
+    }
+    &__btn-container {
+      margin-top: 32px;
     }
   }
   .slider {
@@ -316,6 +345,11 @@
     }
     &__rating-container {
       grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  .slider {
+    &__header {
+      line-height: 24px;
     }
   }
 }

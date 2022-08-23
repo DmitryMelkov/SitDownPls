@@ -3,7 +3,7 @@
 
 .new-collection {
   &__content {
-    padding-top: 158px;
+    padding-top: 155px;
     padding-bottom: 150px;
     background-image: url("../img/new-collection-bg.jpg");
     background-position: center;
@@ -11,6 +11,7 @@
     background-size: cover;
   }
   &__title {
+    padding-bottom: 0;
     font-family: "PlayfairDisplay", sans-serif;
     font-size: 60px;
     line-height: 72px;
@@ -37,7 +38,7 @@
 @media (max-width: 1024px) {
   .new-collection {
     &__content {
-      padding-bottom: 147px;
+      padding-bottom: 152px;
       background-image: url("../img/new-collection-bg-1024.jpg");
     }
   }
@@ -45,7 +46,11 @@
 
 @media (max-width: 768px) {
   .new-collection {
+    &__container {
+      padding-left: 40px;
+    }
     &__content {
+      padding-bottom: 154px;
       background-image: url("../img/new-collection-bg-768.jpg");
     }
   }
@@ -53,6 +58,9 @@
 
 @media (max-width: 530px) {
   .new-collection {
+    &__container {
+      padding-left: 12px;
+    }
     &__content {
       padding-top: 30px;
       padding-bottom: 67px;

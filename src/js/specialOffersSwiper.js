@@ -11,18 +11,15 @@ export function specialOffersSwiper() {
     },
     breakpoints: {
       320: {
-        slidesPerView: 1,
         slidesPerGroup: 1,
       },
       718: {
-        slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 32,
       },
       1024: {
-        spaceBetween: 32,
-        slidesPerView: 3,
         slidesPerGroup: 3,
+        spaceBetween: 32,
       },
     },
   });
