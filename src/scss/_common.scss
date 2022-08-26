@@ -46,6 +46,10 @@ body {
   font-family: "Open sans", sans-serif;
 }
 
+.body {
+  display: flex;
+}
+
 label {
   display: block;
   cursor: pointer;
@@ -72,6 +76,8 @@ h3 {
   font-weight: 400;
   color: $colorBlack;
 }
+
+
 
 span, p {
   font-family: "Open sans", sans-serif;
@@ -137,6 +143,99 @@ span, p {
   }
 }
 
+.checkbox {
+  &__real-check {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__real-check:focus+&__custom-check {
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+  }
+
+  &__custom-check {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: $colorWhite;
+    border: 1px solid $colorPrimary;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  &__custom-check::before {
+    content: '';
+    margin-top: 1px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+
+    background-image: url("../img/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+  }
+
+  &__real-check:checked+&__custom-check {
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+  }
+
+  &__real-check:checked+&__custom-check::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+
+}
+
+.breadcrumbs {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin-right: 15px;
+  }
+  &__item::after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    color: $colorGrey;
+  }
+  &__item:last-child::after {
+    content: "";
+  }
+  &__link {
+    color: $colorGrey;
+
+  }
+  &__span {
+    font-size: 14px;
+    line-height: 14px;
+    color: inherit;
+    transition: color .3s ease-in-out;
+  }
+  &__span-active {
+    color: $colorPrimaryShade;
+  }
+}
+
 
 
 //убрать крестик у инпута
@@ -173,6 +272,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
       background-color: $colorPrimaryLight;
       border: 2px solid $colorPrimaryLight;
   }
+  .breadcrumbs {
+    &__item:hover:not(:last-child) &__span {
+      color: $colorPrimary;
+    }
+  }
 }
 
 //active, focus
@@ -185,6 +289,19 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border: 2px solid $colorPrimaryShade;
     outline: none;
 }
+
+.breadcrumbs {
+  &__item:active:not(:last-child) &__span {
+    color: $colorPrimaryShade;
+  }
+  &__link:focus-visible:not(:active) {
+    color: $colorPrimaryShade;
+    background-color: $colorPinkViolet;
+    outline: none
+  }
+}
+
+
 
 
 

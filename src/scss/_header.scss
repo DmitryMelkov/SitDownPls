@@ -340,7 +340,7 @@
     color: $colorPrimaryShade;
   }
   &__nav-link:focus-visible:not(:active) {
-    color: $colorPrimaryLight;
+    color: $colorPrimaryShade;
     background-color: $colorPinkViolet;
     outline: none;
   }
