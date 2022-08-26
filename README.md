@@ -1,2 +1,0 @@
-# SitDownPls
-internet-shop
