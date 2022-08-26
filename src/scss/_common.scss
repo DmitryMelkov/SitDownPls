@@ -1,0 +1,366 @@
+@import "_variables";
+@import "_mixins";
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+  font-family: "Open sans", sans-serif;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Open sans", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Open sans", sans-serif;
+}
+
+.body {
+  display: flex;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+  color: $colorGrey;
+}
+
+h2 {
+  padding-bottom: 26px;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  color: $colorBlack;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 31.2px;
+  font-weight: 400;
+  color: $colorBlack;
+}
+
+
+
+span, p {
+  font-family: "Open sans", sans-serif;
+}
+
+.title-reset {
+  margin: 0;
+}
+
+.descr-reset {
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.btn-reset {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+.content-btn {
+  display: block;
+  color: $colorWhite;
+  background-color: $colorPrimary;
+  border-radius: 10px;
+  border: 2px solid $colorPrimary;
+  transition: all .3s ease-in-out;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+.section {
+  padding-top: 70px;
+}
+
+.logo {
+  &__img {
+    width: 187px;
+    height: 27px;
+  }
+}
+
+.checkbox {
+  &__real-check {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__real-check:focus+&__custom-check {
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+  }
+
+  &__custom-check {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: $colorWhite;
+    border: 1px solid $colorPrimary;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  &__custom-check::before {
+    content: '';
+    margin-top: 1px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+
+    background-image: url("../img/check.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+  }
+
+  &__real-check:checked+&__custom-check {
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+  }
+
+  &__real-check:checked+&__custom-check::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+
+}
+
+.breadcrumbs {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin-right: 15px;
+  }
+  &__item::after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    color: $colorGrey;
+  }
+  &__item:last-child::after {
+    content: "";
+  }
+  &__link {
+    color: $colorGrey;
+
+  }
+  &__span {
+    font-size: 14px;
+    line-height: 14px;
+    color: inherit;
+    transition: color .3s ease-in-out;
+  }
+  &__span-active {
+    color: $colorPrimaryShade;
+  }
+}
+
+
+
+//убрать крестик у инпута
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+.swiper-button-next.swiper-button-disabled .special-offers__button-next-svg,
+.swiper-button-prev.swiper-button-disabled .special-offers__button-prev-svg {
+  border-color: $colorGrey;
+  color: $colorGrey;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+}
+
+
+
+//hover
+@media (min-width: 1024px) {
+  .content-btn:hover {
+      background-color: $colorPrimaryLight;
+      border: 2px solid $colorPrimaryLight;
+  }
+  .breadcrumbs {
+    &__item:hover:not(:last-child) &__span {
+      color: $colorPrimary;
+    }
+  }
+}
+
+//active, focus
+.content-btn:active {
+  background-color: $colorPrimaryShade;
+  border: 2px solid $colorPrimaryShade;
+}
+.content-btn:focus-visible:not(:active) {
+    background-color: $colorPrimaryLight;
+    border: 2px solid $colorPrimaryShade;
+    outline: none;
+}
+
+.breadcrumbs {
+  &__item:active:not(:last-child) &__span {
+    color: $colorPrimaryShade;
+  }
+  &__link:focus-visible:not(:active) {
+    color: $colorPrimaryShade;
+    background-color: $colorPinkViolet;
+    outline: none
+  }
+}
+
+
+
+
+
+// // import styles bundle
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination.scss';
+@import '../../node_modules/swiper/modules/navigation/navigation.scss';
+
+@media (max-width: 1300px) {
+  .container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+
+@media (max-width: 578px) {
+  .intro {
+    &__content-btn {
+      padding: 10px 30px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    &__content-btn {
+      display: none;
+    }
+  }
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  button {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .content-btn {
+    width: 100%;
+  }
+
+}
+

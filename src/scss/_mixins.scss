@@ -1,0 +1,10 @@
+@import "_variables";
+
+
+@mixin btn-white {
+  padding: 19px 35px;
+  border: 2px solid $colorPrimary;
+  border-radius: 10px;
+  color: $colorPrimary;
+  transition: all 0.3s ease-in-out;
+}
