@@ -1,0 +1,61 @@
+@import "_variables";
+@import "_mixins";
+
+.filter-price {
+  &__slider {
+    margin-top: 10px;
+
+  }
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input {
+    padding-left: 12px;
+    border: none;
+    width: 86px;
+    height: 30px;
+    border: 1px solid $colorGrey;
+  }
+  &__label {
+    display: flex;
+  }
+  &__title {
+    margin-bottom: 5px;
+    font-weight: 600;
+    line-height: 20.8px;
+  }
+  &__text {
+    margin-right: 9px;
+  }
+}
+
+.noUi-target {
+  width: 296px;
+  height: 3px;
+  background-color: $colorGreyMD;
+  border: none;
+  box-shadow: none;
+}
+
+.noUi-connect {
+  background-color: $colorPrimary;
+}
+
+.noUi-handle::before,
+.noUi-handle::after {
+  display: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 13px solid $colorPrimary;
+  top: 3px;
+  right: -7px;
+  box-shadow: none;
+  background-color: transparent;
+}

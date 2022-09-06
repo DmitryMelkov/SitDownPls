@@ -27,14 +27,88 @@
               <div class="sidebar__item">
                 <h4 class="sidebar__item-header">Категория</h4>
                 <ul class="sidebar__list list-reset">
-                  <li class="checkbox">
+                  <li class="checkbox sidebar__checkbox">
                     <label class="checkbox__label sidebar__label">
-                      <input class="checkbox__real-check " type="checkbox" />
+                      <input class="checkbox__real-check" type="checkbox" />
                       <span class="checkbox__custom-check sidebar__custom-check"></span>
                       <span class="sidebar__checkbox-span">Диваны</span>
                     </label>
                   </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Кресла</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Пуфы</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Кровати</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Тумбы</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Комоды</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Стулья</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Столы</span>
+                    </label>
+                  </li>
+                  <li class="checkbox sidebar__checkbox">
+                    <label class="checkbox__label sidebar__label">
+                      <input class="checkbox__real-check" type="checkbox" />
+                      <span class="checkbox__custom-check sidebar__custom-check"></span>
+                      <span class="sidebar__checkbox-span">Аксессуары</span>
+                    </label>
+                  </li>
                 </ul>
+              </div>
+              <div class="sidebar__item">
+                <div class="filter">
+                  <div class="filter__item filter-price">
+                    <h4 class="filter-price__title">Цена</h4>
+                    <div class="filter-price__inputs">
+                      <label class="filter-price__label">
+                        <span class="filter-price__text">от</span>
+                        <input type="number" class="filter-price__input" placeholder="2000" min="2000" max="150000" id="input-1" />
+                      </label>
+                      <label class="filter-price__label">
+                        <span class="filter-price__text">до</span>
+                        <input type="number" class="filter-price__input" placeholder="150000" min="2000" max="150000" id="input-2"/>
+                      </label>
+                    </div>
+                    <div class="filter-price__slider" id="catalog-nouislider"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -261,6 +335,12 @@
                 <li class="catalog-nav__item">
                   <a href="#" class="catalog-nav__link">2</a>
                 </li>
+                <li class="catalog-nav__item">
+                  <a href="#" class="catalog-nav__link">3</a>
+                </li>
+                <li class="catalog-nav__item">
+                  <a href="#" class="catalog-nav__link">4</a>
+                </li>
               </ul>
             </nav>
           </section>
@@ -268,5 +348,9 @@
       </div>
     </main>
     @@include('html/footer.html',{ })
+
+    <!-- greenSock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/app.min.js"></script>
   </body>
 </html>

@@ -163,7 +163,7 @@ span, p {
     width: 14px;
     height: 14px;
     background-color: $colorWhite;
-    border: 1px solid $colorPrimary;
+    border: 1px solid $colorGrey;
     border-radius: 2px;
     margin-top: 5px;
     margin-right: 5px;
@@ -247,6 +247,18 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
+//убрать стрелки от номера у инпута
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 
 
 .swiper-button-next::after,
@@ -305,10 +317,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
 
-// // import styles bundle
+// import swiper
 @import '../../node_modules/swiper/swiper.scss';
 @import '../../node_modules/swiper/modules/pagination/pagination.scss';
 @import '../../node_modules/swiper/modules/navigation/navigation.scss';
+
+//Ползунок
+@import '../../node_modules/nouislider/dist/nouislider';
 
 @media (max-width: 1300px) {
   .container {
