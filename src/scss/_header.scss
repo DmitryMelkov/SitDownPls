@@ -124,6 +124,8 @@
     font-size: 16px;
     line-height: 19px;
     color: $colorGrey;
+    outline: $colorPrimary;
+    transition: background-color .3s ease-in-out;
   }
   &__three-search::placeholder {
     font-size: 16px;

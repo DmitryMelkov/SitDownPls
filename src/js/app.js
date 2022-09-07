@@ -7,6 +7,7 @@ import { specialOffersOpen } from "./specialOffersOpen.js";
 import { topCategorySwiper } from "./topCategorySwiper.js";
 import { catalogPagination } from "./catalogPagination.js";
 import { catalogNouislider } from "./catalogNouislider.js";
+import { catalogSwiper } from "./catalogSwiper.js";
 
 flsFunctions.isWeb();
 selectCustom();
@@ -17,3 +18,4 @@ specialOffersSwiper();
 specialOffersOpen();
 topCategorySwiper();
 catalogNouislider();
+catalogSwiper();

@@ -2,9 +2,9 @@
 @import "_mixins";
 
 .filter-price {
+  margin-bottom: 26px;
   &__slider {
     margin-top: 10px;
-
   }
   &__inputs {
     display: flex;
@@ -15,13 +15,20 @@
     border: none;
     width: 86px;
     height: 30px;
+
+    font-size: 16px;
+    color: $colorGreyShade;
+
     border: 1px solid $colorGrey;
+    transition: border, background-color .3s ease-in-out;
+    outline: $colorPrimary;
   }
   &__label {
     display: flex;
   }
   &__title {
     margin-bottom: 5px;
+    margin-top: 0;
     font-weight: 600;
     line-height: 20.8px;
   }
@@ -31,7 +38,6 @@
 }
 
 .noUi-target {
-  width: 296px;
   height: 3px;
   background-color: $colorGreyMD;
   border: none;
@@ -58,4 +64,49 @@
   right: -7px;
   box-shadow: none;
   background-color: transparent;
+  transition: border-bottom .3s ease-in-out;
+  cursor: pointer;
 }
+
+@media (min-width: 1024px) {
+  .noUi-horizontal .noUi-handle:hover {
+    border-bottom: 13px solid $colorPrimaryLight;
+  }
+  .filter-price {
+    &__input:hover {
+      border: 1px solid $colorPrimary;
+    }
+  }
+
+}
+
+//focus active
+
+.noUi-horizontal .noUi-handle:active {
+  border-bottom: 13px solid $colorPrimaryShade;
+}
+.noUi-horizontal:active  .noUi-connect {
+  background-color: $colorPrimaryShade;
+}
+
+.noUi-horizontal .noUi-handle:focus-visible:not(:active) {
+  border-bottom: 13px solid $colorPrimaryShade;
+  outline: none;
+}
+.noUi-horizontal:focus-visible:not(:active) .noUi-connect {
+  background-color: $colorPrimaryShade;
+}
+
+.filter-price {
+  &__input:active {
+    border: 1px solid $colorPrimaryShade;
+  }
+  &__input:focus-visible:not(:active) {
+    background-color: $colorPinkViolet;
+    border: 1px solid $colorPrimary;
+    outline: none;
+  }
+}
+
+
+
