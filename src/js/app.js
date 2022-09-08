@@ -8,6 +8,7 @@ import { topCategorySwiper } from "./topCategorySwiper.js";
 import { catalogPagination } from "./catalogPagination.js";
 import { catalogNouislider } from "./catalogNouislider.js";
 import { catalogSwiper } from "./catalogSwiper.js";
+import { contactsMap } from "./contactsMap.js";
 
 flsFunctions.isWeb();
 selectCustom();
@@ -19,3 +20,4 @@ specialOffersOpen();
 topCategorySwiper();
 catalogNouislider();
 catalogSwiper();
+contactsMap();

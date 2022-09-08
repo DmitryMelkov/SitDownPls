@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html',{ "title": "Контакты" })
+  <body>
+    @@include('html/header.html',{ })
+
+    <main class="main">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ol class="breadcrumbs__list list-reset">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="./">
+                <span class="breadcrumbs__span">Главная</span>
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__span breadcrumbs__span-active">Контакты</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="container contacts-tab__container">
+        <h2 class="contacts-tab__header title-reset">Контакты</h2>
+        <form class="contacts-tab__form">
+          <label class="contacts-tab__label">
+            <input class="contacts-tab__input" type="search" placeholder="Поиск магазина" />
+          </label>
+          <div>
+            <button class="content-btn contacts-tab__btn btn-reset">Поиск</button>
+          </div>
+        </form>
+        <div class="contacts-tab__map" id="map">
+          <div class="contacts-tab__content">
+            <div class="contacts-tab__content-container">
+              <button class="contacts-tab__map-btn btn-reset">
+              <svg class="contacts-tab__map-btn-svg">
+                <use xlink:href="img/icons/icons.svg#map-close"></use>
+              </svg>
+            </button>
+              <h4 class="contacts-tab__header title-reset">SitDownPls на Солянке</h4>
+              <address class="contacts-tab__adress">ул. Солянка, д.16</address>
+              <a class="header__number" href="tel:+7 (495) 885-45-47">
+                <svg class="header__number-phone">
+                  <use xlink:href="img/icons/icons.svg#phone"></use>
+                </svg>
+                +7 (495) 885-45-47
+              </a>
+              <div class="contacts-tab__info">
+                Часы работы:
+                <span class="contacts-tab__text">с 10:00 до 21:00</span>
+              </div>
+              <div class="contacts-tab__info">
+                Что здесь:
+                <span class="contacts-tab__text"
+                  >шоурум, пункт отгрузки, пункт выдачи, пункт обмена-возврата, сервисный центр
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html',{ })
+
+    <!-- yandex-map -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=36c6bc07-ab52-476e-aeae-5d94aeda2061&lang=ru_RU"></script>
+
+    <!-- greenSock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

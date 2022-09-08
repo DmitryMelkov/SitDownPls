@@ -1,16 +1,13 @@
 @import "_variables";
 @import "_mixins";
 
-.page {
+.sidebar {
+  margin-right: 32px;
+  width: 25%;
   &__container {
     display: flex;
     justify-content: space-between;
   }
-}
-
-.sidebar {
-  margin-right: 32px;
-  width: 25%;
   &__header {
     font-size: 18px;
     font-weight: 600;
