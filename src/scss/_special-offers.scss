@@ -55,6 +55,12 @@
     display: flex;
     justify-content: space-between;
   }
+  &__price-container {
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   &__price {
     margin-bottom: 17px;
     display: flex;
@@ -72,10 +78,13 @@
   }
   &__btn {
     display: block;
+    padding-bottom: 15px;
   }
   &__btn-click {
     @include btn-white;
+    font-size: 16px;
     line-height: 16px;
+    font-weight: 600;
   }
   &__price-img-open {
     display: flex;

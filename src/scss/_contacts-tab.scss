@@ -1,18 +1,20 @@
 @import "_variables";
 @import "_mixins";
 
+
+
 .contacts-tab {
   &__form {
     display: flex;
     margin-bottom: 32px;
-
   }
   &__label {
     margin-right: 32px;
+    width: 100%;
   }
   &__input {
     padding-left: 18px;
-    min-width: 624px;
+    width: 100%;
     height: 58px;
     background-color: $colorGreyLight;
     border-radius: 10px;
@@ -59,24 +61,46 @@
     border-color: $colorWhite transparent transparent transparent;
     transform: translateX(-50%);
   }
-  &__content-container {
-    position: relative;
+  &__header {
+    margin-bottom: 7px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
   }
-  &__map-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-  }
-  &__map-btn-svg {
-    width: 12px;
-    height: 12px;
-    color: $colorGrey;
+  &__adress {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
   }
   &__info {
+
     font-size: 14px;
     line-height: 25px;
     color: $colorGrey;
+  }
+  &__info-bf {
+    margin-top: 26px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  &__info-bf::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $colorGreyLight;
+  }
+  &__info-bf::after {
+    content: '';
+    position: absolute;
+    top: -13px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $colorGreyLight;
   }
   &__text {
     font-size: 14px;
@@ -94,14 +118,26 @@
 }
 
 //active, focus
+.contacts-tab {
+  &__input:active {
+    background-color: $colorGreyLight;
+    border: 2px solid transparent;
+  }
+  &__input:focus-visible:not(:active) {
+    background-color: $colorPinkLight;
+    border: 2px solid $colorPrimary;
+    outline: none;
+  }
+}
+
+
+@media (max-width: 500px) {
   .contacts-tab {
-    &__input:active {
-      background-color: $colorGreyLight;
-      border: 2px solid transparent;
+    &__form {
+      flex-direction: column;
     }
-    &__input:focus-visible:not(:active) {
-      background-color: $colorPinkLight;
-      border: 2px solid $colorPrimary;
-      outline: none;
+    &__label {
+      margin-bottom: 20px;
     }
   }
+}

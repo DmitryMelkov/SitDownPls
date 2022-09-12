@@ -1,0 +1,124 @@
+@import "_variables";
+@import "_mixins";
+
+.cards-products {
+  &__container {
+    display: flex;
+    margin-bottom: 81px;
+  }
+  &__left {
+    width: 50%;
+    margin-right: 32px;
+  }
+  &__img-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  &__img-content:first-child {
+    margin-bottom: 16px;
+  }
+  &__left-title {
+    margin-bottom: 8px;
+    line-height: 16px;
+  }
+  &__left-descr {
+    margin-bottom: 105px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__buy {
+    display: flex;
+    flex-direction: column;
+  }
+  &__right-title {
+    margin-bottom: 5px;
+  }
+  &__right-span-title{
+    margin-bottom: 21px;
+    font-size: 14px;
+    line-height: 14px;
+    color: $colorGrey;
+  }
+  &__price {
+    margin-bottom: 21px;
+    font-size: 36px;
+    line-height: 36px;
+  }
+  &__btn-buy {
+    padding: 14px 35px;
+    margin-bottom: 12px;
+  }
+  &__btn-basket {
+    font-size: 16px;
+    line-height: 21px;
+    color: $colorPrimary;
+    transition: color .3s ease-in-out;
+  }
+  &__feature-left {
+    margin-right: -30%;
+    width: 30%;
+    vertical-align: top;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    color: $colorGrey;
+  }
+  &__feature-left::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    margin: 0 -99% 0 3px;
+    vertical-align: baseline;
+    border-bottom: 1px dashed $colorGrey;
+  }
+  &__feature-right {
+    display: inline-block;
+    letter-spacing: normal;
+    padding-left: 3px;
+    margin-left: 30%;
+    width: 50%;
+    vertical-align: bottom;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  &__slider {
+    margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-products {
+    &__btn-basket:hover {
+      color: $colorPrimaryLight;
+    }
+  }
+}
+
+//focus active
+.cards-products {
+  &__btn-basket:active {
+    color: $colorPrimaryShade;
+  }
+  &__btn-basket:focus-visible:not(:active) {
+    color: $colorPrimary;
+    background-color: $colorPinkViolet;
+    outline: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards-products {
+    &__feature-left::after {
+
+    }
+  }
+}

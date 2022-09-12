@@ -277,7 +277,9 @@ input[type=number] {
   opacity: 1;
 }
 
-
+// .swiper-grid-column > .swiper-wrapper {
+//   flex-direction: unset !important;
+// }
 
 //hover
 @media (min-width: 1024px) {
@@ -322,6 +324,7 @@ input[type=number] {
 @import '../../node_modules/swiper/swiper.scss';
 @import '../../node_modules/swiper/modules/pagination/pagination.scss';
 @import '../../node_modules/swiper/modules/navigation/navigation.scss';
+@import '../../node_modules/swiper/modules/grid/grid.scss';
 
 //Ползунок
 @import '../../node_modules/nouislider/dist/nouislider';

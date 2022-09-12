@@ -1,6 +1,7 @@
 @import "_variables";
 @import "_mixins";
 
+
 .sidebar {
   margin-right: 32px;
   width: 25%;
@@ -88,7 +89,7 @@
   }
   &__swiper-wrapper {
     padding-bottom: 50px;
-    // height: 900px;
+    height: 900px;
   }
   &__swiper-slide {
     position: relative;
@@ -99,12 +100,14 @@
     flex-shrink: 0;
     background-color: #F6F6F6;
     border-radius: 10px;
-    height: calc((100% - 30px) / 3);
+    height: calc((100% - 30px) / 2) ;
   }
   &__pagination {
     bottom: 30px !important;
   }
 }
+
+
 
 .catalog__slider .swiper-pagination-bullet {
   width: 32px;
@@ -125,6 +128,8 @@
   background-color: $colorPrimary;
   color: $colorWhite;
 }
+
+
 
 .catalog-nav {
   display: flex;

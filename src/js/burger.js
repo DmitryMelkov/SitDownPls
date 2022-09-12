@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 export function burger() {
   const burgerOpen = document.querySelector(".burger-open-js");
   const burgerClose = document.querySelector(".burger-close-js");

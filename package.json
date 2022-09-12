@@ -15,6 +15,7 @@
   "devDependencies": {
     "browser-sync": "^2.27.9",
     "del": "^6.0.0",
+    "gsap": "^3.11.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -44,7 +45,6 @@
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
     "webpack": "^5.70.0",
-    "webpack-stream": "^7.0.0",
-    "ymaps": "^0.2.1"
+    "webpack-stream": "^7.0.0"
   }
 }
