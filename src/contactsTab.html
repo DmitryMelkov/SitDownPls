@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('html/head.html',{ "title": "Контакты" })
-  <body>
-    @@include('html/header.html',{ })
+@@include('html/head.html',{ "title": "Контакты" })
 
-    <main class="main">
-      <div class="breadcrumbs">
-        <div class="container">
-          <ol class="breadcrumbs__list list-reset">
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="./">
-                <span class="breadcrumbs__span">Главная</span>
-              </a>
-            </li>
-            <li class="breadcrumbs__item">
-              <span class="breadcrumbs__span breadcrumbs__span-active">Контакты</span>
-            </li>
-          </ol>
-        </div>
+<body>
+  @@include('html/header.html',{ })
+
+  <main class="main">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ol class="breadcrumbs__list list-reset">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="./">
+              <span class="breadcrumbs__span">Главная</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__span breadcrumbs__span-active">Контакты</span>
+          </li>
+        </ol>
       </div>
-      <div class="container contacts-tab__container">
-        <h2 class="contacts-tab__header title-reset">Контакты</h2>
-        <form class="contacts-tab__form">
-          <label class="contacts-tab__label">
-            <input class="contacts-tab__input" type="search" placeholder="Поиск магазина" />
-          </label>
-          <div>
-            <button class="content-btn contacts-tab__btn btn-reset">Поиск</button>
-          </div>
-        </form>
-        <div class="contacts-tab__map" id="map">
-          
+    </div>
+    <div class="container contacts-tab__container">
+      <h2 class="contacts-tab__header title-reset">Контакты</h2>
+      <form class="contacts-tab__form">
+        <label class="contacts-tab__label">
+          <input class="contacts-tab__input" type="search" placeholder="Поиск магазина" />
+        </label>
+        <div>
+          <button class="content-btn contacts-tab__btn btn-reset">Поиск</button>
         </div>
+      </form>
+      <div class="contacts-tab__map" id="map">
+
       </div>
-    </main>
-    @@include('html/footer.html',{ })
+    </div>
+  </main>
+  @@include('html/footer.html',{ })
 
-    <!-- yandex-map -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=36c6bc07-ab52-476e-aeae-5d94aeda2061&lang=ru_RU"></script>
+  <!-- yandex-map -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=36c6bc07-ab52-476e-aeae-5d94aeda2061&lang=ru_RU"></script>
 
-    <script src="js/app.min.js"></script>
-  </body>
+  <script src="js/app.min.js"></script>
+</body>
+
 </html>

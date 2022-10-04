@@ -10,6 +10,21 @@
     width: 50%;
     margin-right: 32px;
   }
+  &__slide-1,
+  &__slide-2 {
+    text-align: center;
+  }
+
+  &__img-1 {
+    text-align: center;
+    height: 61px;
+  }
+  &__img-2 {
+    height: 250px;
+  }
+  &__img-4 {
+    height: 418px;
+  }
   &__img-content {
     display: flex;
     justify-content: space-between;
@@ -41,7 +56,7 @@
   &__right-title {
     margin-bottom: 5px;
   }
-  &__right-span-title{
+  &__right-span-title {
     margin-bottom: 21px;
     font-size: 14px;
     line-height: 14px;
@@ -60,7 +75,7 @@
     font-size: 16px;
     line-height: 21px;
     color: $colorPrimary;
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
   }
   &__feature-left {
     margin-right: -30%;
@@ -73,7 +88,7 @@
     color: $colorGrey;
   }
   &__feature-left::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 100%;
     margin: 0 -99% 0 3px;
@@ -93,12 +108,117 @@
   &__slider {
     margin-bottom: 70px;
   }
+  &__swiper-1 {
+    padding-bottom: 32px;
+    cursor: pointer;
+  }
+  &__swiper-2 {
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  &__swiper-3 {
+    cursor: pointer;
+  }
+  &__swiper-4 {
+    padding-bottom: 50px;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  z-index: 111;
+  visibility: hidden;
+  &__content {
+    position: relative;
+    background-color: $colorWhite;
+    margin: 20% auto;
+    padding: 24px 30px;
+    width: 100%;
+    max-width: 624px;
+  }
+  &__content-cards {
+    max-width: 1280px;
+    max-height: 684px;
+    padding: 50px 100px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  &__close-svg {
+    width: 20px;
+    height: 20px;
+    color: $colorGrey;
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+  &__content-title {
+    margin-bottom: 8px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  &__content-descr {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  &__form-item {
+    margin-bottom: 37px;
+  }
+  &__form-input {
+    padding-left: 18px;
+    width: 100%;
+    max-width: 564px;
+    height: 54px;
+    background-color: #f6f6f6;
+    border: 2px solid #f6f6f6;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    color: $colorGrey;
+    outline: $colorPrimary;
+    transition: background-color 0.3s ease-in-out;
+  }
+  &__btn-container {
+    margin-bottom: 12px;
+  }
+  &__btn {
+    padding: 19px 35px;
+  }
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (min-width: 1024px) {
   .cards-products {
     &__btn-basket:hover {
       color: $colorPrimaryLight;
+    }
+  }
+  .modal {
+    &__close:hover &__close-svg {
+      color: $colorPrimary;
+    }
+    &__form-input:hover {
+      background-color: $colorGreyMD;
     }
   }
 }
@@ -114,11 +234,22 @@
     outline: none;
   }
 }
-
-@media (max-width: 1024px) {
-  .cards-products {
-    &__feature-left::after {
-
-    }
+.modal {
+  &__close:active &__close-svg {
+    color: $colorPrimaryShade;
+  }
+  &__close:focus-visible:not(:active) &__close-svg {
+    color: $colorPrimary;
+    background-color: $colorPinkViolet;
+    outline: none;
+  }
+  &__form-input:active {
+    background-color: $colorGreyLight;
+    border: 2px solid transparent;
+  }
+  &__form-input:focus-visible:not(:active) {
+    background-color: $colorPinkLight;
+    border: 2px solid $colorPrimary;
+    outline: none;
   }
 }

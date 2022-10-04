@@ -7,9 +7,6 @@ export function burger() {
   let burgerTl = gsap.timeline({ paused: true });
 
   burgerTl
-    // .set(".header__burger-menu-js", { clearProps: "all" })
-    // .set(".header__two-list-item-js", { clearProps: "all" })
-    // .set(".burger-img-js", { clearProps: "all" })
     .fromTo(
       ".header__burger-menu-js",
       {

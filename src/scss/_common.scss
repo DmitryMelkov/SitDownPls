@@ -55,7 +55,6 @@ label {
   cursor: pointer;
 }
 
-
 input::placeholder {
   font-size: 16px;
   font-weight: 400;
@@ -78,9 +77,8 @@ h3 {
   color: $colorBlack;
 }
 
-
-
-span, p {
+span,
+p {
   font-family: "Open sans", sans-serif;
 }
 
@@ -114,7 +112,7 @@ span, p {
   background-color: $colorPrimary;
   border-radius: 10px;
   border: 2px solid $colorPrimary;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .visually-hidden {
@@ -144,6 +142,53 @@ span, p {
   }
 }
 
+.block-desktop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.block-mobile {
+  display: none;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.block-clear {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $colorGreyShade;
+}
+
+.block-header {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23.5px;
+}
+
+.block-filter {
+  display: none;
+  position: absolute;
+  top: -48px;
+  right: 36px;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $colorGrey;
+  z-index: 1;
+}
+
+.block-close {
+  &__svg {
+    width: 24px;
+    height: 24px;
+    color: $colorPrimary;
+    transition: color, background-color 0.3s ease-in-out;
+  }
+}
+
 .checkbox {
   &__real-check {
     width: 0;
@@ -153,7 +198,7 @@ span, p {
     z-index: -1;
   }
 
-  &__real-check:focus+&__custom-check {
+  &__real-check:focus + &__custom-check {
     background-color: $colorPrimary;
     border: 1px solid $colorPrimary;
   }
@@ -171,7 +216,7 @@ span, p {
   }
 
   &__custom-check::before {
-    content: '';
+    content: "";
     margin-top: 1px;
 
     position: absolute;
@@ -186,19 +231,17 @@ span, p {
     background-image: url("../img/check.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
-  &__real-check:checked+&__custom-check {
+  &__real-check:checked + &__custom-check {
     background-color: $colorPrimary;
     border: 1px solid $colorPrimary;
   }
 
-  &__real-check:checked+&__custom-check::before {
+  &__real-check:checked + &__custom-check::before {
     transform: translate(-50%, -50%) scale(1);
   }
-
-
 }
 
 .breadcrumbs {
@@ -224,29 +267,35 @@ span, p {
   }
   &__link {
     color: $colorGrey;
-
   }
   &__span {
     font-size: 14px;
     line-height: 14px;
     color: inherit;
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
   }
   &__span-active {
     color: $colorPrimaryShade;
   }
 }
 
-
-
 //убрать крестик у инпута
-input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
-input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="text"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="text"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
-
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
 
 //убрать стрелки от номера у инпута
 
@@ -255,12 +304,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-
-
-
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -277,15 +323,11 @@ input[type=number] {
   opacity: 1;
 }
 
-// .swiper-grid-column > .swiper-wrapper {
-//   flex-direction: unset !important;
-// }
-
 //hover
 @media (min-width: 1024px) {
   .content-btn:hover {
-      background-color: $colorPrimaryLight;
-      border: 2px solid $colorPrimaryLight;
+    background-color: $colorPrimaryLight;
+    border: 2px solid $colorPrimaryLight;
   }
   .breadcrumbs {
     &__item:hover:not(:last-child) &__span {
@@ -300,9 +342,9 @@ input[type=number] {
   border: 2px solid $colorPrimaryShade;
 }
 .content-btn:focus-visible:not(:active) {
-    background-color: $colorPrimaryLight;
-    border: 2px solid $colorPrimaryShade;
-    outline: none;
+  background-color: $colorPrimaryLight;
+  border: 2px solid $colorPrimaryShade;
+  outline: none;
 }
 
 .breadcrumbs {
@@ -312,22 +354,47 @@ input[type=number] {
   &__link:focus-visible:not(:active) {
     color: $colorPrimaryShade;
     background-color: $colorPinkViolet;
-    outline: none
+    outline: none;
   }
 }
 
+.block-clear:active {
+  color: $colorPrimaryShade;
+}
 
+.block-clear:focus-visible:not(:active) {
+  color: $colorPrimaryShade;
+  background-color: $colorPinkViolet;
+}
 
+.block-close:active .block-close__svg {
+  color: $colorPrimaryShade;
+}
+.block-close:focus-visible:not(:active) .block-close__svg {
+  color: $colorPrimaryShade;
+  background-color: $colorPinkViolet;
+  outline: none;
+}
 
+.block-filter:active {
+  color: $colorPrimaryShade;
+}
+.block-filter:focus-visible:not(:active) {
+  color: $colorPrimaryShade;
+  background-color: $colorPinkViolet;
+  outline: none;
+}
 
 // import swiper
-@import '../../node_modules/swiper/swiper.scss';
-@import '../../node_modules/swiper/modules/pagination/pagination.scss';
-@import '../../node_modules/swiper/modules/navigation/navigation.scss';
-@import '../../node_modules/swiper/modules/grid/grid.scss';
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/pagination/pagination.scss";
+@import "../../node_modules/swiper/modules/navigation/navigation.scss";
+@import "../../node_modules/swiper/modules/grid/grid.scss";
+@import "../../node_modules/swiper/modules/free-mode/free-mode.scss";
+@import "../../node_modules/swiper/modules/thumbs/thumbs.scss";
 
 //Ползунок
-@import '../../node_modules/nouislider/dist/nouislider';
+@import "../../node_modules/nouislider/dist/nouislider";
 
 @media (max-width: 1300px) {
   .container {
@@ -341,13 +408,24 @@ input[type=number] {
     padding-left: 36px;
     padding-right: 36px;
   }
+  .block-desktop {
+    display: none;
+  }
+  .block-mobile {
+    display: flex;
+  }
+  .block-filter {
+    display: block;
+  }
 }
-
 
 @media (max-width: 768px) {
   .container {
     padding-left: 72px;
     padding-right: 72px;
+  }
+  .block-filter {
+    right: 72px;
   }
 }
 
@@ -380,6 +458,7 @@ input[type=number] {
   .content-btn {
     width: 100%;
   }
-
+  .block-filter {
+    right: 12px;
+  }
 }
-

@@ -1,20 +1,16 @@
 @import "_variables";
 @import "_mixins";
 
+.sidebar-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
 
 .sidebar {
   margin-right: 32px;
   width: 25%;
-  &__container {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__header {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 23.5px;
-    margin-bottom: 20px;
-  }
+
   &__item {
     margin-bottom: 26px;
   }
@@ -71,7 +67,6 @@
     width: 14px;
     height: 14px;
   }
-
 }
 
 .article {
@@ -85,11 +80,10 @@
   }
   &__slider {
     width: 100%;
-    height: 100%;
   }
   &__swiper-wrapper {
     padding-bottom: 50px;
-    height: 900px;
+    margin-bottom: 100px;
   }
   &__swiper-slide {
     position: relative;
@@ -98,16 +92,14 @@
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     border-radius: 10px;
-    height: calc((100% - 30px) / 2) ;
+    height: auto;
   }
   &__pagination {
-    bottom: 30px !important;
+    bottom: 50px !important;
   }
 }
-
-
 
 .catalog__slider .swiper-pagination-bullet {
   width: 32px;
@@ -129,8 +121,6 @@
   color: $colorWhite;
 }
 
-
-
 .catalog-nav {
   display: flex;
   justify-content: center;
@@ -139,7 +129,6 @@
   padding-bottom: 70px;
   &__list {
     display: flex;
-
   }
   &__item {
     margin-right: 5px;
@@ -151,14 +140,9 @@
     font-weight: 600;
     border: 2px solid $colorPrimary;
     border-radius: 10px;
-    transition: color, background-color .3s ease-in-out;
+    transition: color, background-color 0.3s ease-in-out;
   }
 }
-
-
-
-
-
 
 @media (min-width: 1024px) {
   .catalog-nav {
@@ -180,5 +164,41 @@
     background-color: $colorPrimaryLight;
     outline: none;
   }
+}
 
+@media (max-width: 1024px) {
+  .sidebar {
+    display: block;
+    width: 100%;
+    max-width: 296px;
+    margin-right: 0;
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-left: 36px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    height: 100vh;
+    background-color: $colorWhite;
+    overflow: scroll;
+    transform: translateX(-305px);
+    transition: transform 0.3s ease-in-out;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .article {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .catalog__swiper-slide {
+    padding: 16px;
+  }
+  .sidebar {
+    max-width: 500px;
+    transform: translateX(-500px);
+  }
 }
