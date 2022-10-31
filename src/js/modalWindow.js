@@ -32,11 +32,13 @@ export function modalWindow() {
     }
   };
 
-  buyGoods.addEventListener('click', modalOpen);
-  close.addEventListener('click', modalClose);
+  if ((buyGoods, close, cards, closeCards)) {
+    buyGoods.addEventListener('click', modalOpen);
+    close.addEventListener('click', modalClose);
 
-  cards.addEventListener('click', modalOpenCards);
-  closeCards.addEventListener('click', modalCloseCards);
+    cards.addEventListener('click', modalOpenCards);
+    closeCards.addEventListener('click', modalCloseCards);
+  }
 
   window.addEventListener('click', aroundModalWindow);
 

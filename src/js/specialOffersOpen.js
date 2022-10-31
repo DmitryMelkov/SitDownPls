@@ -13,7 +13,7 @@ export function specialOffersOpen() {
 
         for (let k = hiddenIndex; k <= hiddenIndex + showQuantity; k++) {
           if (boxes[k]) {
-            boxes[k].style.display = "block";
+            boxes[k].style.display = "flex";
           } else {
             btn.style.display = "none";
             break;

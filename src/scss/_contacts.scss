@@ -38,9 +38,21 @@
     border-radius: 10px;
     border: 1px solid $colorGreyLight;
     background-color: $colorGreyLight;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  &__label {
+    opacity: 0;
+    padding-left: 18px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $colorInputError;
+  }
+  &__input.error {
+    border: 1px solid $colorInputError;
   }
   &__checkbox-span {
+    margin-left: 5px;
     text-decoration: underline;
     color: $colorPrimary;
   }
@@ -56,14 +68,61 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-
 }
 
 
 
+.checkbox {
+  &__input {
+    display: none;
+  }
+  &__label {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $colorBlack;
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+  }
+  &__label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 17px;
+    height: 17px;
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+  }
+  &__label::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 4px;
+    width: 12px;
+    height: 12px;
+    background-image: url("../img/check.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scale(0);
+  }
+  &__input:checked + &__label::after {
+    transform: scale(1);
+  }
+}
+
+.checkbox.error .checkbox__label::before {
+  border: 1px solid $colorInputError;
+  background-color: $colorInputError;
+}
+
 //hover
 @media (min-width: 1024px) {
-  .contacts  {
+  .contacts {
     &__input:hover {
       background-color: $colorGreyMD;
       border: 1px solid $colorGreyMD;
@@ -72,7 +131,7 @@
 }
 
 //active, focus
-.contacts  {
+.contacts {
   &__input:focus:not(:active) {
     background-color: $colorPinkLight;
     border: 1px solid $colorPrimary;
@@ -81,7 +140,7 @@
 }
 
 @media (max-width: 1024px) {
-  .contacts  {
+  .contacts {
     padding-top: 73px;
     &__left {
       width: 40%;
@@ -96,7 +155,7 @@
 }
 
 @media (max-width: 768px) {
-  .contacts  {
+  .contacts {
     &__left {
       width: 60%;
     }
@@ -110,7 +169,7 @@
 }
 
 @media (max-width: 600px) {
-  .contacts  {
+  .contacts {
     &__left {
       width: 100%;
     }
