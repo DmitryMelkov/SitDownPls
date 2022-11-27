@@ -15,6 +15,10 @@ export function validation() {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   };
 
+  const numberTest = (input) => {
+    return !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(input.value);
+  };
+
   const formValidate = (form) => {
     let error = 0;
 
@@ -30,6 +34,11 @@ export function validation() {
         }
       } else if (input.classList.contains('name')) {
         if (input.value.length <= 6) {
+          formAddError(input);
+          error++;
+        }
+      } else if (input.classList.contains('phone')) {
+        if (numberTest(input)) {
           formAddError(input);
           error++;
         }
@@ -58,5 +67,7 @@ export function validation() {
     }
   };
 
-  form.addEventListener('submit', formSend);
+  if (form) {
+    form.addEventListener('submit', formSend);
+  }
 }

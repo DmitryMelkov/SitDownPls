@@ -269,6 +269,55 @@ input[type="number"] {
   opacity: 1;
 }
 
+
+.checkbox {
+  &__input {
+    display: none;
+  }
+  &__label {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $colorBlack;
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+  }
+  &__label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 17px;
+    height: 17px;
+    background-color: $colorPrimary;
+    border: 1px solid $colorPrimary;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+  }
+  &__label::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 4px;
+    width: 12px;
+    height: 12px;
+    background-image: url("../img/check.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scale(0);
+  }
+  &__input:checked + &__label::after {
+    transform: scale(1);
+  }
+}
+
+.checkbox.error .checkbox__label::before {
+  border: 1px solid $colorInputError;
+  background-color: $colorInputError;
+}
+
 //hover
 @media (min-width: 1024px) {
   .content-btn:hover {

@@ -6,7 +6,7 @@ export function filters() {
   const filterClearDesktop = document.querySelector('.block-clear-desktop-js');
 
   const filterClear = () => {
-    let checkboxes = document.querySelectorAll('.checkbox__real-check');
+    let checkboxes = document.querySelectorAll('.checkbox__input');
     for (const checkbox of checkboxes) {
       checkbox.checked = false;
     }
